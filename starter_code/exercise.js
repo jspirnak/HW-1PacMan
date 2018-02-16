@@ -30,7 +30,7 @@ exercise.chooseImage = function() {
     // choose between all 4 images
     exercise.flag = 1 - exercise.flag;
     if (exercise.increment > 0) {
-        if (exercise.flag === 1) {
+        if (exercise.flag === 1) { //3 equal signs means they must be equal in type and value
             img1.src = "PacMan2.png";
         } else {
             img1.src = "PacMan1.png";
@@ -45,7 +45,7 @@ exercise.chooseImage = function() {
 };
 
 exercise.checkWallCollision = function() {
-    if (exercise.pos.x > x_boundary-img1.width || exercise.pos.x < 0) {
+    if (exercise.pos.x > x_boundary-img1.width-1 || exercise.pos.x < -exercise.increment) {
         exercise.increment = -exercise.increment;
     }
     // reset the direction of motion if wall is hit
